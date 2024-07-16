@@ -22,29 +22,21 @@
 }
 
 :root {
-  --color-dark: #101828;
-  --color-darkopacity: #10182899;
-  --color-grey: #475467;
-  --color-red: #e44848;
-  --color-yellow: #ffc531;
-  --color-lightblue: #f2f4f7;
-  --color-lightgrey: #f7f7f7;
-  --animation: 150ms ease-in;
+  --dark-grey: #101828;
+  --dark-opacity: #10182899;
+  --grey: #475467;
+  --red: #e44848;
+  --yellow: #ffc531;
+  --light-blue: #f2f4f7;
+  --light-grey: #f7f7f7;
+  --animation: 150ms eas;
 }
 
 body {
   background-color: #fff;
-  background-size: auto 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
   font-family: "Inter", sans-serif;
-  color: var(--color-dark);
+  color: var(--dark-grey);
   margin: 0;
-  overflow: scroll;
-}
-
-div {
-  outline: none;
 }
 
 h1,
