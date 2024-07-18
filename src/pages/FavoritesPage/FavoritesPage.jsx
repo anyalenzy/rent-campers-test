@@ -6,7 +6,7 @@ import css from "./FavoritesPage.module.css";
 const FavoritesPage = () => {
   return (
     <>
-      <DocumentTitle>Favorites</DocumentTitle>
+      <DocumentTitle>Favorites - CamperRent</DocumentTitle>
       <AppBar isFavorites={true} />
       <section>
         <Container></Container>

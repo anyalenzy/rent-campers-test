@@ -8,7 +8,7 @@ import css from "./HomePage.module.css";
 const HomePage = () => {
   return (
     <>
-      <DocumentTitle>Home</DocumentTitle>
+      <DocumentTitle>Home - CamperRent</DocumentTitle>
       <AppBar />
       <section className={css.homeSection}>
         <Container>

@@ -19,7 +19,7 @@ const CatalogPage = () => {
 
   return (
     <>
-      <DocumentTitle>Catalog</DocumentTitle>
+      <DocumentTitle>Catalog - CamperRent</DocumentTitle>
       <AppBar isCatalog={true} />
       <section>
         <Container>
