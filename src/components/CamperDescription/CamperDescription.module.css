@@ -1,0 +1,30 @@
+.mainInfo {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.flexRight {
+  display: flex;
+  align-items: baseline;
+  gap: 11px;
+}
+
+.favoriteBtn {
+  background-color: transparent;
+}
+.favoriteBtn:hover svg {
+  stroke: var(--red);
+  fill: var(--red);
+}
+.heartActive {
+  stroke: var(--red);
+  fill: var(--red);
+}
+.heartNotActive {
+  fill: transparent;
+  stroke: var(--dark-grey);
+}

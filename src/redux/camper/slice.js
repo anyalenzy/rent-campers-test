@@ -33,7 +33,7 @@ const camperSlice = createSlice({
     },
     removeFavorite(state, action) {
       state.favorites = state.favorites.filter(
-        (item) => item.id !== action.payload.id
+        (item) => item._id !== action.payload
       );
     },
   },

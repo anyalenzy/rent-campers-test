@@ -21,7 +21,7 @@ const AboutUs = () => {
           We guarantee the high quality of our services and individuality
           approach to each client. Our campers pass regularly technical
           inspection and equipped with everything necessary for a comfortable
-          stay travel
+          stay travel.
         </p>
       </p>
     </div>
