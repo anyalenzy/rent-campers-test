@@ -24,12 +24,14 @@
 :root {
   --dark-grey: #101828;
   --dark-opacity: #10182899;
+  --black-opacity: #131313b5;
+  --light-opacity: #69646487;
   --grey: #475467;
   --red: #e44848;
   --yellow: #ffc531;
   --light-blue: #f2f4f7;
   --light-grey: #f7f7f7;
-  --animation: 150ms eas;
+  --animation: 150ms ease-in;
 }
 
 body {

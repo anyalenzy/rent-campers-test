@@ -1,4 +1,9 @@
 .homeBg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding-top: 20px;
   height: 100vh;
   border-radius: 40px;
   background-image: linear-gradient(
@@ -10,4 +15,39 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.linkToCatalog {
+  padding: 5px 15px;
+  font-size: 16px;
+  color: #fff;
+  background-color: var(--black-opacity);
+  border: 1px solid var(--yellow);
+  text-transform: uppercase;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: var(--animation);
+}
+
+.linkToCatalog:hover {
+  background-color: var(--light-opacity);
+}
+@media screen and (min-width: 768px) {
+  .homeBg {
+    padding-top: 0px;
+    display: block;
+    position: relative;
+  }
+  .linkToCatalog {
+    position: absolute;
+    left: 80px;
+    top: 450px;
+    padding: 10px 30px;
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .linkToCatalog {
+    left: 105px;
+    top: 600px;
+  }
 }
