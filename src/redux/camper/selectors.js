@@ -6,3 +6,16 @@ export const selectIsError = (state) => state.camper.error;
 export const selectLocation = (state) => state.camper.location;
 export const selectFilters = (state) => state.camper.filters;
 export const selectFavorites = (state) => state.camper.favorites;
+
+export const selectFilteredCampers = createSelector(
+  [selectCampers, selectLocation],
+  (campers, filter) => {
+    if (filter.length > 0) {
+      return campers.filter(({ location }) =>
+        location.toLowerCase().includes(filter.trim().toLowerCase())
+      );
+    } else {
+      return campers;
+    }
+  }
+);

@@ -17,7 +17,10 @@ const camperSlice = createSlice({
     items: [],
     favorites: [],
     location: "",
-    filters: { equipment: [], type: [] },
+    filters: {
+      options: [],
+      camperType: "",
+    },
     isLoading: false,
     error: false,
   },
@@ -26,7 +29,8 @@ const camperSlice = createSlice({
       state.location = action.payload;
     },
     setFilters(state, action) {
-      state.filters = action.payload;
+      const { options, camperType } = action.payload;
+      state.filters = { options, camperType };
     },
     addFavorite(state, action) {
       state.favorites.push(action.payload);

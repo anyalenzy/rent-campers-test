@@ -21,3 +21,16 @@
 .loadMoreBtn:hover {
   border: 1px solid var(--red);
 }
+
+.iconSad {
+  fill: var(--red);
+  stroke: var(--red);
+  margin-top: 10px;
+}
+.empty {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
