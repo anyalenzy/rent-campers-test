@@ -4,7 +4,7 @@ const AboutUs = () => {
   return (
     <div className={css.aboutUsContainer}>
       <h1 className={css.aboutUsTitle}>Camper Rent in Ukraine</h1>
-      <p className={css.description}>
+      <div className={css.description}>
         <p>
           Welcome to Camper Rent Ukraine! We offer the best campers for rent
           throughout Ukraine.
@@ -23,7 +23,7 @@ const AboutUs = () => {
           inspection and equipped with everything necessary for a comfortable
           stay travel.
         </p>
-      </p>
+      </div>
     </div>
   );
 };
