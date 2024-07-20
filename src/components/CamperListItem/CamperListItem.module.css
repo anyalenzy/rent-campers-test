@@ -1,12 +1,28 @@
 .camperListContainer {
-  display: flex;
-  gap: 24px;
-  max-width: 888px;
+  max-width: 360px;
   border-radius: 20px;
   border: 1px solid rgba(16, 24, 40, 0.2);
-  padding: 24px;
+  padding: 14px;
+}
+.imgContainer {
+  margin-bottom: 10px;
 }
 .img {
   border-radius: 10px;
   object-fit: cover;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .camperListContainer {
+    display: flex;
+    gap: 24px;
+    padding: 24px;
+    max-width: 730px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .camperListContainer {
+    max-width: 888px;
+  }
 }

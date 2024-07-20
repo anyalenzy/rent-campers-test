@@ -29,8 +29,7 @@ const camperSlice = createSlice({
       state.location = action.payload;
     },
     setFilters(state, action) {
-      const { options, camperType } = action.payload;
-      state.filters = { options, camperType };
+      state.filters = action.payload;
     },
     addFavorite(state, action) {
       state.favorites.push(action.payload);

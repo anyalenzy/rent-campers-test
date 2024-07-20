@@ -4,7 +4,7 @@ import css from "./FilterBar.module.css";
 
 const FilterBar = () => {
   return (
-    <div>
+    <div className={css.filterBarContainer}>
       <LocationInput />
       <FilterForm />
     </div>

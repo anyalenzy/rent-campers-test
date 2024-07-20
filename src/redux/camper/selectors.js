@@ -19,3 +19,16 @@ export const selectFilteredCampers = createSelector(
     }
   }
 );
+
+export const selectFoundCampers = createSelector(
+  [selectCampers, selectFilters],
+  (campers, filters) => {
+    const { options, camperType } = filters;
+
+    return campers.filter((camper) => {
+      const matchesType = camperType ? camper.form === camperType : true;
+
+      return matchesType;
+    });
+  }
+);

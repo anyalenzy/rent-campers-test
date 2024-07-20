@@ -9,7 +9,6 @@ import css from "./CamperDescription.module.css";
 const CamperDescription = ({ camper }) => {
   const { name, price, _id, rating, reviews, location, description } = camper;
   const favorites = useSelector(selectFavorites);
-  console.log(favorites);
   const [isFavorite, setIsFavorite] = useState(false);
   const dispatch = useDispatch();
 

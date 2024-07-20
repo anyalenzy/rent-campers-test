@@ -2,18 +2,13 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import {
   selectFilteredCampers,
-  selectIsError,
-  selectIsLoading,
 } from "../../redux/camper/selectors";
 import CamperListItem from "../CamperListItem/CamperListItem";
 import css from "./CampersList.module.css";
-import Loader from "../Loader/Loader";
 import Icon from "../Icon/Icon";
 
 const CampersList = () => {
   const campers = useSelector(selectFilteredCampers);
-  const loading = useSelector(selectIsLoading);
-  const error = useSelector(selectIsError);
   const [maxCampers, setMaxCampers] = useState(4);
 
   const handleLoadMore = () => {
@@ -24,7 +19,6 @@ const CampersList = () => {
 
   return (
     <div>
-      {loading && <Loader />}
       <ul className={css.list}>
         {visibleCampers.map((camper) => (
           <CamperListItem camper={camper} key={camper._id} />

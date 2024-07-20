@@ -1,12 +1,14 @@
 import { useId } from "react";
 import css from "./LocationInput.module.css";
 import { changeLocation } from "../../redux/camper/slice";
+import { selectLocation } from "../../redux/camper/selectors";
 import Icon from "../Icon/Icon";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export const LocationInput = () => {
   const dispatch = useDispatch();
   const inputLocationId = useId();
+  const location = useSelector(selectLocation);
   return (
     <div className={css.locationContainer}>
       <label className={css.label} htmlFor={inputLocationId}>
@@ -16,6 +18,7 @@ export const LocationInput = () => {
         <input
           className={css.input}
           type="text"
+          value={location}
           id={inputLocationId}
           placeholder="Country, City"
           onChange={(e) => dispatch(changeLocation(e.target.value))}

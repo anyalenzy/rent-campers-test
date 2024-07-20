@@ -65,7 +65,6 @@
   text-overflow: ellipsis;
   margin-bottom: 24px;
   line-height: 1.5;
-  max-width: 525px;
   letter-spacing: -0.01em;
 }
 .showMoreBtn {
@@ -80,4 +79,14 @@
 }
 .showMoreBtn:hover {
   background-color: var(--red-hover);
+}
+@media screen and (min-width: 768px) {
+  .text {
+    max-width: 325px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .text {
+    max-width: 525px;
+  }
 }

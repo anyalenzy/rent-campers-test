@@ -4,7 +4,7 @@ import css from "./CamperListItem.module.css";
 const CamperListItem = ({ camper }) => {
   return (
     <li className={css.camperListContainer}>
-      <div>
+      <div className={css.imgContainer}>
         <img
           className={css.img}
           src={camper.gallery[0]}

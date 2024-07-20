@@ -1,10 +1,10 @@
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import css from "./FilterForm.module.css";
 import Icon from "../Icon/Icon";
 import { setFilters } from "../../redux/camper/slice";
 import { selectFilters } from "../../redux/camper/selectors";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 const filters = [
   { id: "wind", label: "AC", name: "airConditioner" },
@@ -29,55 +29,86 @@ const FilterForm = () => {
   const selectedFilters = useSelector(selectFilters);
   console.log(selectedFilters);
 
+  const dispatch = useDispatch();
+
   return (
     <Formik
-      initialValues={{ options: [], camperType: "" }}
+      initialValues={{
+        options: selectedFilters.options || [],
+        camperType: selectedFilters.camperType || "",
+      }}
       validationSchema={validationSchema}
-      onSubmit={(values) => {
-        setFilters(values);
+      onSubmit={(values, { resetForm }) => {
+        dispatch(setFilters(values));
+        resetForm();
       }}
     >
       {({ values, handleChange, handleSubmit }) => (
         <Form className={css.filterForm} onSubmit={handleSubmit}>
-          <h2 className={css.title}>Filter Campers</h2>
+          <h2 className={css.filtersTitle}>Filters </h2>
 
-          <div className={css.section}>
-            <h3>Options</h3>
-            {filters.map((filter) => (
-              <label key={filter.id} className={css.filterLabel}>
-                <Field
-                  type="checkbox"
-                  name="options"
-                  value={filter.name}
-                  checked={values.options.includes(filter.name)}
-                  onChange={handleChange}
-                  className={css.checkbox}
-                />
-                <Icon
-                  iconName={filter.id}
-                  width="32"
-                  height="32"
-                  styles={css.optionsIcon}
-                />
-              </label>
-            ))}
+          <div>
+            <h3 className={css.filtersSubTitle}>Vehicle equipment</h3>
+            <div className={css.filtersContainer}>
+              {filters.map((filter) => (
+                <label key={filter.id} className={css.labelContainer}>
+                  <Field
+                    type="checkbox"
+                    name="options"
+                    value={filter.name}
+                    checked={values.options.includes(filter.name)}
+                    onChange={handleChange}
+                    className={css.checkbox}
+                  />
+                  <div className={css.filterWrapper}>
+                    <Icon
+                      iconName={filter.id}
+                      width="32"
+                      height="32"
+                      styles={css[filter.id]}
+                    />
+                    <p className={css.filterLabel}>{filter.label}</p>
+                  </div>
+                </label>
+              ))}
+              <ErrorMessage
+                className={css.errorMessage}
+                name="options"
+                component="div"
+              />
+            </div>
           </div>
 
-          <div className={css.section}>
-            <h3>Camper Type</h3>
-            {camperTypes.map((type) => (
-              <label key={type.id} className={css.filterLabel}>
-                <Field
-                  type="radio"
-                  name="camperType"
-                  value={type.value}
-                  checked={values.camperType === type.value}
-                  onChange={handleChange}
-                  className={css.radio}
-                />
-                <span className={css.radioLabel}>{type.label}</span>
-              </label>
-            ))}
+          <div>
+            <h3 className={css.filtersSubTitle}>Vehicle type</h3>
+            <div className={css.filtersContainer}>
+              {camperTypes.map((type) => (
+                <label key={type.id} className={css.labelContainer}>
+                  <Field
+                    type="radio"
+                    name="camperType"
+                    value={type.value}
+                    checked={values.camperType === type.value}
+                    onChange={handleChange}
+                    className={css.radio}
+                  />
+                  <div className={css.filterWrapper}>
+                    <Icon
+                      iconName={type.id}
+                      width="32"
+                      height="32"
+                      styles={css[type.id]}
+                    />
+                    <p className={css.filterLabel}>{type.label}</p>
+                  </div>
+                </label>
+              ))}
+              <ErrorMessage
+                className={css.errorMessage}
+                name="camperType"
+                component="div"
+              />
+            </div>
           </div>
           <button type="submit" className={css.searchBtn}>
             Search

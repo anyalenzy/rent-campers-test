@@ -6,7 +6,7 @@
 }
 
 .label {
-  color: rgba(16, 24, 40, 0.6);
+  color: var(--grey);
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
