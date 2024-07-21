@@ -1,9 +1,7 @@
-import Modal from 'react-modal';
-import css from './BasicModal.module.css';
+import Modal from "react-modal";
+import css from "./BasicModal.module.css";
 
-
-
-Modal.setAppElement('#root');
+Modal.setAppElement("#root");
 
 export const BasicModal = ({ isOpen, onClose, children }) => {
   return (
@@ -11,13 +9,12 @@ export const BasicModal = ({ isOpen, onClose, children }) => {
       className={css.modal}
       isOpen={isOpen}
       onRequestClose={() => onClose()}
+      ariaHideApp={false}
       overlayClassName={css.overlay}
     >
-
       {children}
     </Modal>
   );
 };
-
 
 export default BasicModal;

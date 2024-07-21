@@ -1,5 +1,4 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useEffect, useRef } from "react";
 import * as Yup from "yup";
 import css from "./BookForm.module.css";
 
@@ -23,13 +22,6 @@ const BookForm = () => {
     window.location.reload();
   };
 
-  const dateInputRef = useRef(null);
-
-  useEffect(() => {
-    if (dateInputRef.current) {
-      dateInputRef.current.placeholder = "Booking date";
-    }
-  }, []);
   return (
     <div className={css.formContainer}>
       <h3 className={css.formTitle}>Book your campervan now</h3>
@@ -72,8 +64,7 @@ const BookForm = () => {
                 type="date"
                 id="bookingDate"
                 name="bookingDate"
-                innerRef={dateInputRef}
-                // placeholder="Booking date"
+                placeholder="Booking date"
                 className={css.field}
               />
               <ErrorMessage
