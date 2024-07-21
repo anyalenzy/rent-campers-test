@@ -2,13 +2,14 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import {
   selectFilteredCampers,
+  selectFoundCampers,
 } from "../../redux/camper/selectors";
 import CamperListItem from "../CamperListItem/CamperListItem";
 import css from "./CampersList.module.css";
 import Icon from "../Icon/Icon";
 
 const CampersList = () => {
-  const campers = useSelector(selectFilteredCampers);
+  const campers = useSelector(selectFoundCampers);
   const [maxCampers, setMaxCampers] = useState(4);
 
   const handleLoadMore = () => {

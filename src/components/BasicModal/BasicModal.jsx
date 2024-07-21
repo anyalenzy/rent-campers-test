@@ -12,7 +12,7 @@ export const BasicModal = ({ isOpen, onClose, children }) => {
       ariaHideApp={false}
       overlayClassName={css.overlay}
     >
-      {children}
+      <div className={css.modalContent}>{children}</div>
     </Modal>
   );
 };

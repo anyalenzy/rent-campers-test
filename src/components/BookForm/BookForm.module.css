@@ -3,6 +3,7 @@
   padding: 23px;
   border-radius: 10px;
   border: 1px solid var(--light-opacity);
+  flex-shrink: 0;
 }
 .formTitle {
   font-size: 20px;

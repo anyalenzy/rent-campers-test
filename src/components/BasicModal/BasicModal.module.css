@@ -1,5 +1,10 @@
 .modal {
   position: relative;
+  border-radius: 20px;
+  width: 982px;
+  padding: 40px 10px 40px 40px;
+  max-height: 96vh;
+  overflow: hidden;
 }
 
 .overlay {
@@ -15,4 +20,9 @@
   overflow-y: auto;
   z-index: 999;
   background-color: rgba(47, 47, 47, 0.6);
+}
+.modalContent {
+  height: 96vh;
+  border-radius: 20px;
+  overflow-y: scroll;
 }

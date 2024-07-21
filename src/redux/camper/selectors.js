@@ -21,14 +21,17 @@ export const selectFilteredCampers = createSelector(
 );
 
 export const selectFoundCampers = createSelector(
-  [selectCampers, selectFilters],
+  [selectFilteredCampers, selectFilters],
   (campers, filters) => {
     const { options, camperType } = filters;
 
     return campers.filter((camper) => {
       const matchesType = camperType ? camper.form === camperType : true;
+      const matchesOptions = options.length
+        ? options.every((option) => camper.details[option])
+        : true;
 
-      return matchesType;
+      return matchesType && matchesOptions;
     });
   }
 );
